@@ -18,7 +18,7 @@ df_test = loadmat(PATH + 'data_test.mat')['data_test']
 df_label = loadmat(PATH + 'label_train.mat')['label_train'].squeeze()
 K = 4
 kf = KFold(n_splits=K, shuffle=False)
-kf.split(df_label)
+# kf.split(df_label)
 acc_train = 0
 acc_valid = 0
 
@@ -33,5 +33,6 @@ for train_index, valid_index in kf.split(df_label):  # 4-fold
     acc_train += float(sum(res_train == df_label[train_index]) / len(train_index))
     acc_valid += float(sum(res_valid == df_label[valid_index]) / len(valid_index))
 
+    #print('ACC using SVM: ' + str(acc_train) + ' | ' + 'Valid: ' + str(acc_valid))
 
 print('ACC using SVM: ' + str(acc_train / K) + ' | ' + 'Valid: ' + str(acc_valid / K))

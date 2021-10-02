@@ -16,7 +16,7 @@ PATH = 'Data/'
 df_train = torch.from_numpy(loadmat(PATH + 'data_train.mat')['data_train']).float()
 df_test = torch.from_numpy(loadmat(PATH + 'data_test.mat')['data_test']).float()
 df_label = torch.from_numpy(loadmat(PATH + 'label_train.mat')['label_train'].squeeze()).float()
-K = 6
+K = 4
 kf = KFold(n_splits=K, shuffle=False)
 kf.split(df_label)
 vali_res = 0
@@ -43,8 +43,8 @@ class Net(nn.Module):
         return out
 
 
-net = Net(33,100,1)
-optimizer = torch.optim.SGD(net.parameters(),lr = 0.03)
+net = Net(33,50,1)
+optimizer = torch.optim.SGD(net.parameters(),lr = 0.01)
 loss_func = torch.nn.MSELoss()
 
 train_index, valid_index = next(kf.split(df_label))
@@ -52,7 +52,7 @@ train_index, valid_index = next(kf.split(df_label))
 train_acc = 0
 valid_acc = 0
 
-train_index, valid_index = next(kf.split(df_label))  # 4-fold
+train_index, valid_index = next(kf.split(df_label))  # 6-fold
 summary(net, (330, 33))
 
 for i in range(100000):
@@ -70,3 +70,11 @@ for i in range(100000):
         valid_acc = sum(res_valid == df_label[valid_index]) / len(valid_index)
         print('i-'+ str(i) + ' Train acc: ' + str(train_acc.numpy()) + ' | ' + 'Valid acc : ' + str(
             valid_acc.numpy()) + ' loss：' + str(loss))
+        if valid_acc >= 0.98:
+            break
+_ = 1
+
+res_test = net(df_test).squeeze()
+postive = res_test > 0; negative = res_test < 0
+res = torch.ones(res_test.size())
+res[postive] = 1;  res[negative] = -1

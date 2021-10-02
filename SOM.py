@@ -49,7 +49,7 @@ som.pca_weights_init(X_train)
 som.train(X_train, 1000, verbose=False)
 
 print(classification_report(y_test, classify(som, X_test)))
-
+_  =1
 
 def print_location():
     plt.figure(figsize=(9, 9))
