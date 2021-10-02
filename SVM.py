@@ -36,3 +36,6 @@ for train_index, valid_index in kf.split(df_label):  # 4-fold
     #print('ACC using SVM: ' + str(acc_train) + ' | ' + 'Valid: ' + str(acc_valid))
 
 print('ACC using SVM: ' + str(acc_train / K) + ' | ' + 'Valid: ' + str(acc_valid / K))
+
+print('Label of testing data are:')
+print(model.predict(df_test))

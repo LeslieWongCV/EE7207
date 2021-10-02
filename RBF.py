@@ -100,6 +100,8 @@ class RBF(object):
         w0_column = np.array([1 for _ in range(len(act_val_test))])
         act_val_test = np.insert(act_val_test, len(act_val_test[0]), values=w0_column, axis=1)
         output = act_val_test.dot(self.w)
+        print('Label of testing data are:')
+        print(np.squeeze(self.acc(output, self.threshold, None, False)))
         return output, self.acc(output, self.threshold, None, False)
 
 
