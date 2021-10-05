@@ -90,9 +90,9 @@ Acc of the testing set = 94.50%.
 <img src='/Imgs/Layer (type).png' height="250">
 </div>  
 
-Loss: MSE  
-Optimizer: SGD  
-Dropout rate: 0.5  
+` Loss: MSE  `   
+` Optimizer: SGD  `   
+` Dropout rate: 0.5  `   
 We ran for 30,000 epochs in total, and results are shown in Figure.11.
 
 <img src='/Imgs/loss train.png'>
