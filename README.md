@@ -125,11 +125,15 @@ We find out that the network has more parameters would cause unstable and overfi
 
 ### VI.  Conclusion
 <div align = 'center'>
-<img src='/Imgs/Pasted Graphic 14.png' height="150">
+<img src='/Imgs/Pasted Graphic 14.png' height="120">
 </div>  
-1.RBF needs pre-train to find the proper centers, there are many methods that could find the centers: Random picking/Top-down/Bottom-up/K-means/SOM/Gradient Descent.  
-2.SVM is fast, The SVM learning problem can be expressed as a convex optimization problem, so known effective algorithms can be used to find the global minimum of the objective function. Other classification methods (such as rule-based classifiers and artificial neural networks) use a strategy based on greedy learning to search the hypothesis space. This method generally only obtains a local optimal solution.  
-3.SOM can be used for classification by doing: for each neural we store the label of the classes that appeared most frequently in the training process.   
+
+1.RBF needs pre-train to find the proper centers, there are many methods that could find the centers: Random picking/Top-down/Bottom-up/K-means/SOM/Gradient Descent.    
+
+2.SVM is fast, The SVM learning problem can be expressed as a convex optimization problem, so known effective algorithms can be used to find the global minimum of the objective function. Other classification methods (such as rule-based classifiers and artificial neural networks) use a strategy based on greedy learning to search the hypothesis space. This method generally only obtains a local optimal solution.   
+
+3.SOM can be used for classification by doing: for each neural we store the label of the classes that appeared most frequently in the training process.    
+
 4.MLP with too many parameters would cause unstable performance, in this case, for stability, RBF and SVM is better than MLP.  
 
 ### Appendix 
