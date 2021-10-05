@@ -42,12 +42,12 @@ We use k-means and SOM to generate the centers for RBF network.
 
 #### Structure
 
-num_neural:  81 ,    
-num_iteration: 500 * num_neural =  40,500  
-sigma: 3,   (at the iteration t we have sigma(t) = sigma / (1 + t/T), where T = num_iteration/2  
-learning_rate: 0.5,  (at the iteration t we have learning_rate(t) = learning_rate / (1 + t/T) )  
-Neighborhood Function: Gaussian distribution with sigma=1 and sigma=5   
-Weight initializing: Picking random samples from data.  
+` num_neural:  81 ,    `   
+` num_iteration: 500 * num_neural =  40,500  `   
+` sigma: 3,   (at the iteration t we have sigma(t) = sigma / (1 + t/T), where T = num_iteration/2  `   
+` learning_rate: 0.5,  (at the iteration t we have learning_rate(t) = learning_rate / (1 + t/T) )  `  
+` Neighborhood Function: Gaussian distribution with sigma=1 and sigma=5   `   
+` Weight initializing: Picking random samples from data.  `   
 
 <img src='/Imgs/Pasted Graphic 6.png'>
 
