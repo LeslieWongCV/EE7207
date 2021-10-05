@@ -30,9 +30,9 @@ centers = model.cluster_centers_`
 The output of the RBF is shown in the figure , so next we need to pick a threshold for the classification.
 <img src='/Imgs/F4.png'>
 We choose threshold from [-0.5, 0.5], step set as 0.05, to test how different thresholds influence the Accuracy. We set threshold as 0.20, and test the model with 21 testing data, the output is shown in Figure.3.
-
-<img src='/Imgs/Pasted Graphic 5.png' height="100" width = "200">
-
+<div align = 'center'>
+<img src='/Imgs/Pasted Graphic 5.png' height="200" width = "180">
+</div>  
 To test how the number of neurons influence the performance, we choose it from [5, 100] and the accuracy is shown in the Figure.4.
 We set the number of neurons to be 45; threshold as 0.3 and test the model with 21 testing data, the output is shown in the appendix A.
 
@@ -41,7 +41,7 @@ We use k-means and SOM to generate the centers for RBF network.
 
 #### Structure
 
-num_neural:  int( ) = 81 ,  
+num_neural:  81 ,  
 num_iteration: 500 * num_neural =  40,500
 sigma: 3,   (at the iteration t we have sigma(t) = sigma / (1 + t/T), where T = num_iteration/2
 learning_rate: 0.5,  (at the iteration t we have learning_rate(t) = learning_rate / (1 + t/T) )
@@ -52,11 +52,14 @@ Weight initializing: Picking random samples from data.
 
 
 #### Results
-<img src='/Imgs/Pasted Graphic 7.png' height="30" width = "100">
-
+<div align = 'center'>
+<img src='/Imgs/Pasted Graphic 7.png' height="80" width = "180">
+</div>  
 #### Visualizing Data
 To visualize the result of the training we plot the distance map using a pseudo color where the neurons of the maps are displayed as an array of cells and the color represents the (weights) distance from the neighbor neurons. On top of the pseudo color we add markers that represent the samples mapped in the specific cells:
-<img src='/Imgs/Pasted Graphic 8.png' height="100" width = "200">
+<div align = 'center'>
+<img src='/Imgs/Pasted Graphic 8.png' height="400" width = "400">
+</div>  
 
 To have an overview of how the samples are distributed across the map a scatter chart can be used where each dot represents the coordinates of the winning neuron. A random offset is added to avoid overlaps between points within the same cell.
 <img src='/Imgs/Figure_8.png'>
@@ -79,7 +82,11 @@ Acc of the testing set = 94.50%.
    Gamma in the RBF kernel is also a hyper-param to be tuned, a model with bigger gamma will have fewer support vectors. 
 
 ### V.  Multilayer Perceptron
-<img src='/Imgs/Layer (type).png' height="40" width = "100">
+
+<div align = 'center'>
+<img src='/Imgs/Layer (type).png' height="200" width = "180">
+</div>  
+
 Loss: MSE
 Optimizer: SGD
 Dropout rate: 0.5
@@ -88,14 +95,19 @@ We ran for 30,000 epochs in total, and results are shown in Figure.11.
 
 <img src='/Imgs/loss train.png'>
 For different no. of neurons, we test the performance of the MLP, results shown in Figure.12.
-<img src='/Imgs/Pasted Graphic 13.png' height="50" width = "70">
+
+<div align = 'center'>
+<img src='/Imgs/Pasted Graphic 13.png' height="400" width = "400">
+</div>  
+
+
 
 We find out that the network has more parameters would cause unstable and overfitting. And 330 samples is not enough for deep learning. In this task, traditional neural network beats the MLP. 
 
 ### VI.  Conclusion
-
-<img src='/Imgs/Pasted Graphic 14.png' height="50">
-
+<div align = 'center'>
+<img src='/Imgs/Pasted Graphic 14.png' height="200">
+</div>  
 1.RBF needs pre-train to find the proper centers, there are many methods that could find the centers: Random picking/Top-down/Bottom-up/K-means/SOM/Gradient Descent. 
 
 2.SVM is fast, The SVM learning problem can be expressed as a convex optimization problem, so known effective algorithms can be used to find the global minimum of the objective function. Other classification methods (such as rule-based classifiers and artificial neural networks) use a strategy based on greedy learning to search the hypothesis space. This method generally only obtains a local optimal solution.
